@@ -41,7 +41,7 @@ def WriteBizname(output, fullname, limit=None):
         name, lastname = prepareName(fullname)
         for bizname in computeName(name, lastname, limit):
             if(bizname):
-                out.write(f'\n{bizname}')
+                out.write(f'{bizname}\n')
 
 
 def main(argv):
