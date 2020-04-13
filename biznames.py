@@ -67,8 +67,17 @@ def main(argv):
         else:
             readWriteBizname(output, namefile, limit)
     except Exception as error:
-        print(error)
-        print("==== BUSINESS NAME GENERATOR ====")
+        print(
+            '''                                                                 
+             ,,                                                                 
+`7MM"""Yp,   db                                                                 
+  MM    Yb                                                                      
+  MM    dP `7MM  M"""MMV `7MMpMMMb.   ,6"Yb.  `7MMpMMMb.pMMMb.  .gP"Ya  ,pP"Ybd 
+  MM"""bg.   MM  '  AMV    MM    MM  8)   MM    MM    MM    MM ,M'   Yb 8I   `" 
+  MM    `Y   MM    AMV     MM    MM   ,pm9MM    MM    MM    MM 8M"""""" `YMMMa. 
+  MM    ,9   MM   AMV  ,   MM    MM  8M   MM    MM    MM    MM YM.    , L.   I8 
+.JMMmmmd9  .JMML.AMMmmmM .JMML  JMML.`Moo9^Yo..JMML  JMML  JMML.`Mbmmd' M9mmmP'                                                                          
+''')
         print("[*] Args List [*]")
         print("|| -o output file")
         print("|| -w wordlist/namelist file")
