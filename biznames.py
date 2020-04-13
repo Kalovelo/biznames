@@ -36,12 +36,20 @@ def readWriteBizname(output, namefile, limit=None):
                         out.write(f'\n{bizname}')
 
 
-def WriteBizname(output, fullname, limit=None):
+def writeBizname(output, fullname, limit=None):
     with open(output, 'w') as out:
         name, lastname = prepareName(fullname)
         for bizname in computeName(name, lastname, limit):
             if(bizname):
                 out.write(f'{bizname}\n')
+
+
+def appendBizname(output, fullname, limit=None):
+    with open(output, 'a+') as out:
+        name, lastname = prepareName(fullname)
+        for bizname in computeName(name, lastname, limit):
+            if(bizname):
+                out.write(f'\n{bizname}')
 
 
 def main(argv):
@@ -62,11 +70,13 @@ def main(argv):
             if opt == "-n":
                 singleName = arg
 
-        if(singleName):
-            WriteBizname(output, singleName, limit)
-        else:
+        if(singleName and namefile):
             readWriteBizname(output, namefile, limit)
-    except Exception as error:
+            appendBizname(output, singleName, limit)
+        else:
+            readWriteBizname(output, namefile, limit) if namefile else writeBizname(
+                output, singleName, limit)
+    except:
         print(
             '''                                                                 
              ,,                                                                 
